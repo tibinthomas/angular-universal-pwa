@@ -1,15 +1,18 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 
 import { AppComponent } from './app.component';
 import { BrowserModule } from '@angular/platform-browser';
+import { EchoService } from './services/echo.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
    bootstrap: [ AppComponent ],
  imports: [
-     BrowserModule
+     BrowserModule,
+     HttpClientModule
  ],
- declarations: [ AppComponent],
+ declarations: [ AppComponent ],
+   providers: [EchoService]
 })
 export class AppModule {
 }

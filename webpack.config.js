@@ -12,12 +12,14 @@ module.exports = function () {
         resolve: {
             extensions: ['.ts', '.js']
         },
+	module: {
+	   rules: [
+	       {test: /\.ts$/, loaders: ['awesome-typescript-loader', 'angular2-template-loader']},
+	       { test: /\.css$/, loader: 'raw-loader' },
+	       { test: /\.html$/, loader: 'raw-loader' }
+	   ]
+	},
 
-        module: {
-            rules: [
-                {test: /\.ts$/, loader: 'awesome-typescript-loader'}
-            ]
-        },
         plugins: [
             new HtmlWebpackPlugin({
                 template: __dirname + '/src/index.html',
